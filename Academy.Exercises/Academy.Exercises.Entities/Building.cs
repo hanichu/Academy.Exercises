@@ -7,5 +7,9 @@ namespace Academy.Exercises.Entities
     public class Building
     {
         public Floor[] Floors { get; set; }
+
+        public string BuildingName { get; set; }
     }
+
+
 }

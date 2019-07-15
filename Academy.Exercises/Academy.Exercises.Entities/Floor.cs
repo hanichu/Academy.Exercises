@@ -7,5 +7,7 @@ namespace Academy.Exercises.Entities
     public class Floor
     {
         public Space[] Rooms { get; set; }
+
+        public int FloorNumber { get; set; }
     }
 }

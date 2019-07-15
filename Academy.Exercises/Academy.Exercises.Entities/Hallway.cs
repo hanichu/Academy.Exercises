@@ -6,5 +6,9 @@ namespace Academy.Exercises.Entities
 {
     public class Hallway: Space
     {
+        public Hallway(Guid id) : base(id)
+        {
+
+        }
     }
 }

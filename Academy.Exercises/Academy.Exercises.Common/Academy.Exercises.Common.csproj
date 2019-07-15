@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Academy.Exercises.Entities\Academy.Exercises.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Academy.Exercises.Entities
 {
-    public class BathRoom : Space
+    public class TechnicalRoom:Space
     {
-        public BathRoom(Guid id):base(id)
+        public TechnicalRoom(Guid id):base(id)
         {
 
         }

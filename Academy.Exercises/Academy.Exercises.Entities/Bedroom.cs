@@ -14,5 +14,10 @@ namespace Academy.Exercises.Entities
     {
         public BedRoomType Type { get; set; }
         public bool HasTelevision { get; set; }
+
+        public BedRoom(Guid id) : base(id)
+        {
+
+        }
     }
 }
