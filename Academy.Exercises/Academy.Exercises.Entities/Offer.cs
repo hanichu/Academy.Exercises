@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Academy.Exercises.Entities
 {
-    public class Employee : Person
+    public class Offer
     {
-        public string Job { get; set; }
+        public Space[] Spaces { get; set; }
 
-        public decimal Salary { get; set; }
     }
 }

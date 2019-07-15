@@ -4,10 +4,7 @@ using System.Text;
 
 namespace Academy.Exercises.Entities
 {
-    public class Employee : Person
+    public class Hall : Space
     {
-        public string Job { get; set; }
-
-        public decimal Salary { get; set; }
     }
 }

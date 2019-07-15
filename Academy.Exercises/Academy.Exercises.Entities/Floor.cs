@@ -6,6 +6,6 @@ namespace Academy.Exercises.Entities
 {
     public class Floor
     {
-        public Room[] Rooms { get; set; }
+        public Space[] Rooms { get; set; }
     }
 }

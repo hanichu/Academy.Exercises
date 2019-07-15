@@ -11,5 +11,7 @@ namespace Academy.Exercises.Entities
         public Employee[] Employees { get; set; }
 
         public Customer[] Customers { get; set; }
+
+        public Offer[] Offers { get; set; }
     }
 }

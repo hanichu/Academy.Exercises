@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Academy.Exercises.Entities
 {
-    public class Room
+    public class BathRoom : Space
     {
     }
 }
