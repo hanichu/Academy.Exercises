@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using Academy.Exercises.Common;
 using Academy.Exercises.Entities;
+
 
 namespace Academy.Exercises.Exercise1
 {
@@ -122,18 +124,86 @@ namespace Academy.Exercises.Exercise1
                     }
                 }
             };
-
-
+            hotel.SetRoomNumbers();
+            hotel.Save("./hotel1.json");
         }
 
         static void Main(string[] args)
         {
-            Initialize();
+            //Initialize();
+            //dotnet Academy.Exercises.Exercise1.dll hotel1.json
+            if(args.Length == 1)
+            {
+                try
+                {
+                    hotel = Utilities.Load(args[0]);
+                    //hotel.DisplayTree();
+                    WriteMenu();
+                }
 
-            hotel.SetRoomNumbers();
-            hotel.DisplayTree();
+                catch (Newtonsoft.Json.JsonReaderException)
+                {
+                    Console.WriteLine("Formato non valido");
+                    return;
+                }              
+                catch(FileNotFoundException)
+                {
+                    Console.WriteLine("Il file non c'è");
+                    return;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("errore: " + e.Message);
+                    return;
+                }
 
+            }
+            else Console.WriteLine("Inserire un parametro");
             Console.ReadLine();
+        }
+
+        private static void WriteMenu()
+        {
+            bool exit = false;
+            while (exit == false)
+            {
+                Console.WriteLine("1. Mostra albero");
+                Console.WriteLine("2. Cerca camera");
+                Console.WriteLine("3. Cerca cliente");
+                Console.WriteLine("4. Crea cliente");
+                Console.WriteLine("ESC per uscire");
+                var key = Console.ReadKey();
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.D1:
+                        Console.Clear();
+                        hotel.DisplayTree();
+                        break;
+
+                    case ConsoleKey.D2:
+                        Console.Clear();
+                        break;
+
+                    case ConsoleKey.D3:
+                        Console.Clear();
+                        break;
+
+                    case ConsoleKey.D4:
+                        Console.Clear();
+                        break;
+
+                    case ConsoleKey.Escape:
+                        exit = true;
+                        break;
+
+            
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Scelta errata");
+                        break;
+                }
+            }
         }
     }
 }

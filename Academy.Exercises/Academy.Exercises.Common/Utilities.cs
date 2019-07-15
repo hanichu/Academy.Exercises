@@ -1,6 +1,9 @@
 ﻿using Academy.Exercises.Entities;
 using System;
 
+using Newtonsoft.Json;
+using System.IO;
+
 namespace Academy.Exercises.Common
 {
     public static class Utilities
@@ -38,5 +41,16 @@ namespace Academy.Exercises.Common
                 }
             }
         } 
+
+        public static void Save(this Hotel hotel, string path)
+        {
+            string json = JsonConvert.SerializeObject(hotel);
+            File.WriteAllText(path, json);
+        }
+        public static Hotel Load(string path)
+        {
+            var json = File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<Hotel>(json);
+        }
     }
 }

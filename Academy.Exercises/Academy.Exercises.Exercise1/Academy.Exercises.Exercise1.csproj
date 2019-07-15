@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Academy.Exercises.Common\Academy.Exercises.Common.csproj" />
     <ProjectReference Include="..\Academy.Exercises.Entities\Academy.Exercises.Entities.csproj" />
   </ItemGroup>
